@@ -1,9 +1,18 @@
 CODEMY.COM Install Flask and Build a Website:  https://www.youtube.com/playlist?list=PLCC34OHNcOtolz2Vd9ZSeSXWc8Bq23yEz (44 videos)
+this is the video to connect to git (version control and error handling):  https://www.youtube.com/watch?v=3O4ZmH5aolg&list=PLCC34OHNcOtolz2Vd9ZSeSXWc8Bq23yEz&index=3
 
-To connect to Git Hub user.name and user.email:  
+
+To send changes to GitHub
+    - from bash prompt:
+        - git add .
+        - git commit -am 'changed (filename)'
+        - git push
+        
+To connect to GitHub user.name and user.email:  
     - go to command prompt
     - git config --global user.name "Steven Jackson"
     - git config --global user.email "sjackson330@gmail.com"
+
 
 To create a virtual environment and install what is needed for this tutorial:
     - go to cmd prompt virtualenv virtualenv
