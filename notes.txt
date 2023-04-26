@@ -1,0 +1,26 @@
+CODEMY.COM Install Flask and Build a Website:  https://www.youtube.com/playlist?list=PLCC34OHNcOtolz2Vd9ZSeSXWc8Bq23yEz (44 videos)
+
+To connect to Git Hub user.name and user.email:  
+    - go to command prompt
+    - git config --global user.name "Steven Jackson"
+    - git config --global user.email "sjackson330@gmail.com"
+
+To create a virtual environment and install what is needed for this tutorial:
+    - go to cmd prompt virtualenv virtualenv
+    - cd .\venv\
+    - .\Scripts\activate
+    - navigate to the website folder.....cd "C:\Users\sjack\OneDrive\Jackson_Family_Inventory\"
+
+    Notes:
+     - Open up Bash (instead of PowerShell or CMD prompt)
+     - Create virtual environment:
+        - python -m venv virt
+        - source virt/Scripts/activate
+        - You'll see (virt) which means you're in the virtual environment
+        - pip freeze to see what all is in our environment
+        - pip install flask
+        - To create a file, you can do it this way:  touch hello.py (in the bash prompt)
+        - to run the webserver.... in bask/flask prompt type:  flask run
+        - we are using jinja2 for the filters
+
+
