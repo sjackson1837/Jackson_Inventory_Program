@@ -1,13 +1,39 @@
 CODEMY.COM Install Flask and Build a Website:  https://www.youtube.com/playlist?list=PLCC34OHNcOtolz2Vd9ZSeSXWc8Bq23yEz (44 videos)
 this is the video to connect to git (version control and error handling):  https://www.youtube.com/watch?v=3O4ZmH5aolg&list=PLCC34OHNcOtolz2Vd9ZSeSXWc8Bq23yEz&index=3
 
+Video I'm on now:  #23 - https://www.youtube.com/watch?v=o0r_4zxz9z8&list=PLCC34OHNcOtolz2Vd9ZSeSXWc8Bq23yEz&index=23
+
+go to python terminal and type:  python hello.py to open server and be able to just re-fresh the screen
+
+Young kid video:  https://www.youtube.com/watch?v=X7KAEyRVhEk
+
+Notes:
+     - Open up Bash (instead of PowerShell or CMD prompt)
+     - Create virtual environment:
+        - python -m venv virt
+        - "source virt/Scripts/activate"
+        - You'll see (virt) which means you're in the virtual environment
+        - pip freeze to see what all is in our environment
+        - pip install flask
+        - To create a file, you can do it this way:  touch hello.py (in the bash prompt)
+        - to run the webserver.... in bask/flask prompt type:  flask run
+        - we are using jinja2 for the filters
+
+        *****try this to run the server in cmd prompt****
+        - set FLASK_APP=hello
+        - flask run
+        **********
+
+USE "WHAT THE FORMS" Flask WTF to get code for forms.
+USE BOOTSTRAP for formatting options (buttons, forms, messages, etc)
 
 To send changes to GitHub
+    - set up vs code to talk with GitHub (watch video linked above)...also the code you need is from codemy.com/git
     - from bash prompt:
         - git add .
         - git commit -am 'changed (filename)'
         - git push
-        
+
 To connect to GitHub user.name and user.email:  
     - go to command prompt
     - git config --global user.name "Steven Jackson"
@@ -16,20 +42,58 @@ To connect to GitHub user.name and user.email:
 
 To create a virtual environment and install what is needed for this tutorial:
     - go to cmd prompt virtualenv virtualenv
-    - cd .\venv\
+    - cd .\venv\ or .\virt\
     - .\Scripts\activate
     - navigate to the website folder.....cd "C:\Users\sjack\OneDrive\Jackson_Family_Inventory\"
 
-    Notes:
-     - Open up Bash (instead of PowerShell or CMD prompt)
-     - Create virtual environment:
-        - python -m venv virt
-        - source virt/Scripts/activate
-        - You'll see (virt) which means you're in the virtual environment
-        - pip freeze to see what all is in our environment
-        - pip install flask
-        - To create a file, you can do it this way:  touch hello.py (in the bash prompt)
-        - to run the webserver.... in bask/flask prompt type:  flask run
-        - we are using jinja2 for the filters
+INSTALL MYSQL:
+create file named:  create_db.py
+Install all 3 of these:
+    - pip install mysql-connector
+    - pip install mysql-connector-python
+    - pip install mysql-connector-python-rf
+    - I ALSO INSTALLED pip install mysqlclient
+    - I ALSO INSTALLED pip install pymysql
+    - I ALSO INSTALLED pip install cryptography
+
+To get into python terminal in GITBASH:
+ - winpty python
+ - from hello import db
+ - NONE OF THIS WORKED....I'M KEEPING THESE NOTES IN HERE JUST TO REMIND ME......I JUST WENT INTO MySQL Workbench 
+ and created the users table myself and now everything is working.....
+
+
+ To add column to database I used this command:
+ - flask --app=hello db init (hello is the name of the main db file (hello.py))...
+    - i used this command instead of flask db init
+- instead of flask db....use "flask --app=hello db"
+- instead of flask db migrate -m 'Initial Migration' I used:  "flask --app=hello db migrate -m 'Initial Migration'"
+- instead of flask db upgrage, I used:  "flask --app=hello db upgrade"
+- Here are the steps to do a new migration:
+    * flask --app=hello db migrate 'added something'
+    * flask --app=hello db upgrade
+
+- When you update a database (add a column for example, this is how you do the migration in GitBash Terminal)
+    1. flask --app=hello db migrate -m 'added username'
+    2. flask --app=hello db upgrade
+    3. In the hello.py file, you need to add the new column to the #Create a Form Class / class UserForm(FlaskForm): section
+    4. In the hello.py file, you need to add the new column to the add_user section (if that is where the new column is form)
+        users = Users(username=form.username.data, name=form.name.data.....etc)
+    5. Also add form.username.data = '' in the add_user section
+    6.  
+
+HEROKU:
+ - pip install gunicorn
+ - pip install psycopg2
+ - pip freeze > requirements.txt
+ - echo web: gunicorn app:app > Procfile
+ - heroku login
+ - heroku create flasker1 (or name it whatever)
+ - heroku addons:create heroku-postgresql:hobby-dev --app flasker1 (or whatever the name is)
+ 
+
+
+
+
 
 
